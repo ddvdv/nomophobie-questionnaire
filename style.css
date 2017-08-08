@@ -1,0 +1,38 @@
+@font-face {
+  font-family: 'Unibody8';
+  src: url("Unibody8Pro-Bold.otf"); }
+body {
+  background: linear-gradient(to bottom, white, #e8d5d9);
+  display: grid;
+  grid-template-columns: 1fr 800px 1fr;
+  grid-template-rows: 150px 350px 1fr 200px;
+  grid-template-areas: ". title ." ". intro ." ". form ."; }
+
+form {
+  color: #00366e;
+  grid-area: form; }
+
+h1 {
+  color: #00366e;
+  text-align: center;
+  font-family: 'Unibody8';
+  grid-area: title; }
+
+.intro {
+  color: #00366e;
+  font-size: 1.2em;
+  text-align: justify;
+  grid-area: intro; }
+
+label {
+  width: 700px; }
+
+input[type='range'] {
+  width: 200px;
+  display: inline;
+  vertical-align: bottom; }
+
+output {
+  display: inline; }
+
+/*# sourceMappingURL=style.css.map */
