@@ -1,6 +1,10 @@
 <?php
+	include 'connect.php';
+
 	$myQuestions = file_get_contents('myQuestions.json');
 	$myQuestionsDecoded = json_decode($myQuestions);
+
+
 ?>
 
 
@@ -39,12 +43,24 @@
 				<div class="form-group">
 					<label for='question<?php echo($i); ?>'>
 					<p><?php echo($i . '. ' . $myQuestionsDecoded->$i); ?><br>
-						<input type="range" id="question<?php echo($i); ?>" class="question" name="question<?php echo($i); ?>" min="1" max="7" onchange="rangevalue<?php echo($i); ?>.value=value"/>
+						<input type="range" id="question-<?php echo($i);?>" class="question" name="question<?php echo($i); ?>" min="1" max="7" onchange="rangevalue<?php echo($i); ?>.value=value"/>
 						<output id="rangevalue<?php echo($i); ?>">4</output>
 				</div>
 			<?php
 		}
 	?>
+	<div class="form-group">
+		<label for='city'>Ville: 
+			<input id="city" name="city">
+		</label>
+	</div>
+
+	<div class="form-group">
+		<label for='age'>Age: 
+			<input id="age" name="age">
+		</label>
+	</div>
+
 
 	<div class="form-group">
 		<input type="submit" id="submit" name="submit" value="Calculer ma dépendance">
