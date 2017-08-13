@@ -1,22 +1,12 @@
-// Calcul du niveau de dépendance
-
+// fonction JQUERY globale
 $(function(){
-	$('#submit').click(function(){
-		let total = 0;
-		for(i = 1; i <= 20; i++){
-			numRep = $('#question-'+i).val();
-			total = total + parseFloat(numRep);
-		}
-		$('#total').text(total);
-	});
-	// Mise à jour du niveau des rep aux questions
+	// Mise à jour dans le questionnaire lors du déplacement du curseur
 	$('input').change(function(){
 		let num = $(this).val();
 		num = parseFloat(num);
 		let idFull = $(this).attr('id');
 		let idTab = idFull.split("-");
 		let id = idTab[1];
-		console.log(id);
 		let msg = '';
 		switch(num){
 			case 1:
@@ -44,26 +34,22 @@ $(function(){
 		console.log(num);
 		$('#rangevalue'+id).text(num + " " + msg);
 	});
-});
+		// Lorsque clic sur le boutton submit
+		$('#submit').click(function(event){
+			// Calcul du total des points
+			let total = 0;
+			for(i = 1; i <= 20; i++){
+				numRep = $('#question-'+i).val();
+				total = total + parseFloat(numRep);
+			}
+			$('#total').text(total);
+			// Envoi du résulat en AJAX
+			postCodeVal = $('#city').val();
+			ageVal = $('#age').val();
+			totalVal = total;
+			$.get('connect.php?totalKey='+totalVal+'&postCodeKey='+postCodeVal+'&ageKey='+ageVal, function(data){
+				$('#resultat').html(data);
+			});
+		});
 
-
-
-
-// Envoi du résultat en AJAX
-var form = document.getElementsByTagName('form');
-
-form = form[0];
-
-
-
-form.addEventListener('submit', function(e){
-	e.preventDefault();
-	var xhttp = new XMLHttpRequest();
-	  xhttp.onreadystatechange = function() {
-	    if (this.readyState == 4 && this.status == 200) {
-	     form.insertAdjacentHTML('afterEnd', this.responseText);
-	    }
-	  };
-	  xhttp.open("GET", "result.php", true);
-	  xhttp.send();
 });

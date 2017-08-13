@@ -1,10 +1,10 @@
 <?php
-	include 'connect.php';
+// Connection à la DB
+	// include 'connect.php';
 
+// Import du questionnaire
 	$myQuestions = file_get_contents('myQuestions.json');
 	$myQuestionsDecoded = json_decode($myQuestions);
-
-
 ?>
 
 
@@ -31,9 +31,10 @@
 		À partir de ces réponses, le questionnaire suivant a été élaboré dans la seconde phase de l’étude.
 		</p>
 	</div>
-
+<!-- Le calcul du résultat se fera en JS et la comparaison des stat en AJAX -->
 	<form action="post" onsubmit="event.preventDefault();">
 
+<!-- Génération du questionnaire -->
 	<?php
 		for($i = 1; $i <= 20; $i++){
 			if($i == 10){
@@ -44,13 +45,13 @@
 					<label for='question<?php echo($i); ?>'>
 					<p><?php echo($i . '. ' . $myQuestionsDecoded->$i); ?><br>
 						<input type="range" id="question-<?php echo($i);?>" class="question" name="question<?php echo($i); ?>" min="1" max="7" onchange="rangevalue<?php echo($i); ?>.value=value"/>
-						<output id="rangevalue<?php echo($i); ?>">4</output>
+						<output id="rangevalue<?php echo($i); ?>"></output>
 				</div>
 			<?php
 		}
 	?>
 	<div class="form-group">
-		<label for='city'>Ville: 
+		<label for='city'>Code Postal: 
 			<input id="city" name="city">
 		</label>
 	</div>
@@ -67,7 +68,11 @@
 		<span id="total"></span>
 	</div>
 
+	
 	</form>
+
+	<div id="resultat">
+	</div>
 
 	<script src="jquery.js"></script>
 	<script src="app.js"></script>

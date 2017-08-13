@@ -13,13 +13,18 @@ body{
 	grid-template-rows: 150px 350px 1fr 200px;
 	grid-template-areas: ". title ."
 						 ". intro ."
-						 ". form .";
+						 ". form ."
+						 ". resultat .";
 }
 
 
 form{
 	color: $blue;
 	grid-area: form;
+}
+
+#resultat{
+	grid-area: resultat;
 }
 
 h1{

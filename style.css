@@ -6,11 +6,14 @@ body {
   display: grid;
   grid-template-columns: 1fr 800px 1fr;
   grid-template-rows: 150px 350px 1fr 200px;
-  grid-template-areas: ". title ." ". intro ." ". form ."; }
+  grid-template-areas: ". title ." ". intro ." ". form ." ". resultat ."; }
 
 form {
   color: #00366e;
   grid-area: form; }
+
+#resultat {
+  grid-area: resultat; }
 
 h1 {
   color: #00366e;
