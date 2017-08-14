@@ -9,15 +9,14 @@
 		'city' => $_GET['postCodeKey'],
 		'age' => $_GET['ageKey']));
 
-	echo(' reçu');
-
-// Récupération du top 10 et de la commune concernée
+// Récupération de la commune concernée
 	$postCode = $_GET["postCodeKey"];
 	$liste = $bdd->query("SELECT * FROM cities WHERE postCode = '$postCode'");
-
 	while ($donnees = $liste->fetch()){
 		echo($donnees['cityName']);
 	}
+
+// Récuparation du top 10
 
 // postCode = $_GET["postCodeKey"]
 
