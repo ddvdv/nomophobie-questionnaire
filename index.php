@@ -14,11 +14,14 @@
 	<meta charset="UTF-8">
 	<title>Nomophobia</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="style.css">
 
 </head>
 <body>
+	<div class="title">
 	<h1>Êtes-vous nomophobe ?</h1>
+	</div>
 
 	<div class="intro">
 		<p>
@@ -29,6 +32,8 @@
 		L’étude a été menée en deux phases. La première a consisté en l’exploration qualitative de la nomophobie à travers des entrevues avec neuf étudiants. C’est à la suite de cette étape que quatre dimensions ont été définies : l’incapacité à communiquer, la perte de connectivité, l’impossibilité d’accéder à de l’information et l’abandon de la commodité.</p>
 		<p>
 		À partir de ces réponses, le questionnaire suivant a été élaboré dans la seconde phase de l’étude.
+		</p>
+		<p>Calculez votre niveau de nomophobie en déplaçant les curseurs!
 		</p>
 	</div>
 <!-- Le calcul du résultat se fera en JS et la comparaison des stat en AJAX -->
@@ -50,7 +55,7 @@
 			<?php
 		}
 	?>
-	<div class="form-group">
+<!-- 	<div class="form-group">
 		<label for='city'>Code Postal: 
 			<input id="city" name="city">
 		</label>
@@ -60,18 +65,19 @@
 		<label for='age'>Age: 
 			<input id="age" name="age">
 		</label>
-	</div>
+	</div> -->
 
 
 	<div class="form-group">
 		<input type="submit" id="submit" name="submit" value="Calculer ma dépendance">
-		<span id="total"></span>
 	</div>
 
 	
 	</form>
 
 	<div id="resultat">
+			<span id="total"></span>
+
 	</div>
 
 	<script src="jquery.js"></script>
