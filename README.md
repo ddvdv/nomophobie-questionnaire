@@ -14,8 +14,8 @@ Source: http://blogues.radio-canada.ca/triplex/2015/09/08/catherine-mathys-77/
 
 L'app prend la forme d'une page unique: index.php
 
-La liste des questions est chargée à partir d'un fichier json et générée en php.
+La liste des questions est chargée à partir d'un fichier json (myQuestions.json) et générée en php.
 
-Le calcul des points se fait avec jQuery.
+Le calcul des points se fait avec jQuery (app.js)
 
 (en cours) La comparaison et les stat se font en AJAX et consultation d'une DB MySQL.

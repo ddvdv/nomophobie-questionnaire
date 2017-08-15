@@ -50,6 +50,7 @@ output {
 
 #resultat{
   display: block;
+  min-height: 100px;
   font-size: 2em;
   color: #F4D06E;
 }
