@@ -1,7 +1,4 @@
 <?php
-// Connection à la DB
-	// include 'connect.php';
-
 // Import du questionnaire
 	$myQuestions = file_get_contents('myQuestions.json');
 	$myQuestionsDecoded = json_decode($myQuestions);

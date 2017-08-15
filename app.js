@@ -42,6 +42,7 @@ $(function(){
 				numRep = $('#question-'+i).val();
 				total = total + parseFloat(numRep);
 			}
+			// Commentaires selon le résultat final
 			var msg = '';
 			if(total > 100){
 					msg = "Plus de 100 points, vous êtes fameusement entamé!";
@@ -57,7 +58,7 @@ $(function(){
 				}
 			$('#total').text(total + " points au total; " + msg);
 			$('#total').focus();
-			// Envoi du résulat en AJAX
+			// Envoi du résulat en AJAX, suspendu à ce stade
 			// postCodeVal = $('#city').val();
 			// ageVal = $('#age').val();
 			// totalVal = total;
