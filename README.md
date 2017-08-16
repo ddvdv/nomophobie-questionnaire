@@ -19,3 +19,5 @@ La liste des questions est chargée à partir d'un fichier json (myQuestions.jso
 Le calcul des points se fait avec jQuery (app.js)
 
 (en cours) La comparaison et les stat se font en AJAX et consultation d'une DB MySQL.
+
+App: https://nomophobia.herokuapp.com/
